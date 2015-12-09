@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import scraperwiki
 import lxml.html
 import sys
@@ -7,7 +9,7 @@ doc = lxml.html.fromstring(html)
 i = 0
 
 for el in doc.cssselect("a.blipTypeIcon"):
-    song = el.attrib['title'].replace("\\'", "'").replace("search for ","").encode('utf-8')
+    song = el.attrib['title'].replace("\\'", "'").replace("search for ","").decode('utf8').encode('utf8')
     print song
     data = {
         'row': i,
