@@ -1,5 +1,6 @@
 import scraperwiki
 import lxml.html
+import sys
 url = "http://blip.fm/profile/diskurs/playlist"
 html = scraperwiki.scrape(url)
 doc = lxml.html.fromstring(html)
@@ -7,7 +8,7 @@ i = 0
 
 for el in doc.cssselect("a.blipTypeIcon"):
     song = el.attrib['title'].replace("\\'", "'").replace("search for ","")
-    print song
+    print song.encode('utf-8')
     data = {
         'row': i,
         'song': song
