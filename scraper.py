@@ -1,6 +1,6 @@
 import scraperwiki
 import lxml.html
-url = "http://blip.fm/profile/leolobato/playlist"
+url = "http://blip.fm/profile/diskurs/playlist"
 html = scraperwiki.scrape(url)
 doc = lxml.html.fromstring(html)
 i = 0
