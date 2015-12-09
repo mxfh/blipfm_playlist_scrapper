@@ -9,8 +9,9 @@ doc = lxml.html.fromstring(html)
 i = 0
 
 for el in doc.cssselect("a.blipTypeIcon"):
-    song = el.attrib['title'].replace("\\'", "'").replace("search for ","").decode('utf8').encode('utf8')
-    print song
+    song = el.attrib['title'].replace("\\'", "'").replace("search for ","")
+    songU = song.decode('utf8');
+    print songU
     data = {
         'row': i,
         'song': song
